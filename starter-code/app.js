@@ -10,11 +10,19 @@ app.use(expressLayouts);
 app.set("view engine","ejs");
 
 //END SETUP-------------------------------------------
+var randomIndex;
 
 app.get("/",(req, res, next)=>{
+  function getRandomIndex(){
+    randomIndex=Math.floor(Math.random()*colors.length);
+    return randomIndex;
+  }
+  getRandomIndex();
+
+  res.locals.featuredColor=colors[randomIndex];
+  res.locals.theColors=colors;
 
   res.render("homepage.ejs");
-
 });
 
 app.get("/colors",(req, res, next)=>{
@@ -22,6 +30,21 @@ app.get("/colors",(req, res, next)=>{
   res.render("colors.ejs");
 });
 
+
+app.get("/blue",(req, res, next)=>{
+  res.locals.theColors=colors;
+  res.render("blue.ejs");
+});
+
+app.get("/grayscale",(req, res, next)=>{
+  res.locals.theColors=colors;
+  res.render("grayscale.ejs");
+});
+
+app.get("/orange",(req, res, next)=>{
+  res.locals.theColors=colors;
+  res.render("orange.ejs");
+});
 
 
 // Large variables************************

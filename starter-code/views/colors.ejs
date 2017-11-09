@@ -1,8 +1,8 @@
 <h2>_Colors_</h2>
 <ul class=allColors>
 <% theColors.forEach((oneColor)=>{ %>
-<li class="item">
-  <div class="box" style="background-color:<%= oneColor.keyword%>"></div>
+<li class="homepage-color">
+  <div class="box" style="background-color:<%=oneColor[randomIndex].keyword %>"></div>
   <p><%=oneColor.keyword%></p>
   <p><%=oneColor.hex%></p>
 </li>
