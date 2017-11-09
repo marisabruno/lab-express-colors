@@ -26,12 +26,14 @@ app.get("/",(req, res, next)=>{
 });
 
 app.get("/colors",(req, res, next)=>{
+
   res.locals.theColors=colors;
   res.render("colors.ejs");
 });
 
 
 app.get("/blue",(req, res, next)=>{
+  
   res.locals.theColors=colors;
   res.render("blue.ejs");
 });

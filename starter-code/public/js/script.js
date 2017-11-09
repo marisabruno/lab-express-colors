@@ -162,7 +162,7 @@ function switchColor()
     getRandomIndex();
     newColor=colors[randomIndex].keyword;
     document.querySelector('.homepage-box').style.backgroundColor=newColor;
-    setTimeout(switchColor, 1000);
+    setTimeout(switchColor, 200);
 }
 
 switchColor();
